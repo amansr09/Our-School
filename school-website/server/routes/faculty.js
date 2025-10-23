@@ -52,7 +52,7 @@ router.post('/', auth, upload.single('image'), async (req, res) => {
       phone,
       bio,
       specialization: specialization ? JSON.parse(specialization) : [],
-      imageUrl: req.file ? `/uploads/${req.file.filename}` : null,
+      imageUrl: req.file ? req.file.path : null,
       order: order || 0,
       isActive: isActive !== undefined ? isActive : true
     });
@@ -96,7 +96,7 @@ router.put('/:id', auth, upload.single('image'), async (req, res) => {
     }
 
     if (req.file) {
-      updateData.imageUrl = `/uploads/${req.file.filename}`;
+      updateData.imageUrl = req.file.path;
     }
 
     const updatedFaculty = await Faculty.findByIdAndUpdate(
