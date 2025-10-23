@@ -241,20 +241,20 @@ const ManageGallery = () => {
                 }}>
                   {item.thumbnailUrl ? (
                     <img 
-                      src={`http://localhost:5000${item.thumbnailUrl}`}
+                      src={`${item.thumbnailUrl}`}
                       alt={item.title}
                       style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                     />
                   ) : (
                     <video 
-                      src={`http://localhost:5000${item.videoUrl}`}
+                      src={`${item.videoUrl}`}
                       style={{ width: '100%', height: '100%', objectFit: 'contain' }}
                       controls
                     />
                   )}
                 </div>
               ) : (
-                <img src={`http://localhost:5000${item.imageUrl}`} alt={item.title} />
+                <img src={`${item.imageUrl}`} alt={item.title} />
               )}
               <div className="gallery-admin-info">
                 <h3>{item.title}</h3>
