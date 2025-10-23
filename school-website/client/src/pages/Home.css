@@ -855,16 +855,33 @@ html {
   margin-top: 2rem;
 }
 
+/* Hero Image Class */
+.hero-circle-image {
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 8px solid rgba(255,255,255,0.3);
+  box-shadow: 0 15px 50px rgba(0,0,0,0.4);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   /* Hero Section - Smaller */
   .hero {
     min-height: auto;
-    padding: 3rem 0;
+    padding: 2rem 0;
   }
 
   .hero-overlay {
-    padding: 2rem 0;
+    padding: 1.5rem 0;
+  }
+
+  /* Hero Circle Image - Much Smaller on Mobile */
+  .hero-circle-image {
+    width: 250px !important;
+    height: 250px !important;
+    border: 5px solid rgba(255,255,255,0.3) !important;
   }
 
   .hero-content h1 {

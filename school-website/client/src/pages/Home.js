@@ -282,14 +282,7 @@ const Home = () => {
                   key={heroContent?.images?.[0]?.url || 'hero-default'}
                   src={heroContent?.images?.[0]?.url ? `${heroContent.images[0].url}` : "/images/illustration.webp"}
                   alt="Hero"
-                  style={{
-                    width: '450px',
-                    height: '450px',
-                    borderRadius: '50%',
-                    objectFit: 'cover',
-                    border: '8px solid rgba(255,255,255,0.3)',
-                    boxShadow: '0 15px 50px rgba(0,0,0,0.4)'
-                  }}
+                  className="hero-circle-image"
                 />
               </div>
               
