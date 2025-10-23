@@ -592,15 +592,15 @@ const Home = () => {
             </div>
             <div style={{ 
               display: 'grid', 
-              gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', 
-              gap: '1.5rem' 
+              gridTemplateColumns: 'repeat(auto-fill, minmax(140px, 1fr))', 
+              gap: '1rem' 
             }}>
               {galleryPhotos.map((photo) => (
                 <div 
                   key={photo._id}
                   onClick={() => setSelectedMediaItem(photo)}
                   style={{
-                    borderRadius: '10px',
+                    borderRadius: '8px',
                     overflow: 'hidden',
                     cursor: 'pointer',
                     boxShadow: '0 4px 15px rgba(255,255,255,0.1)',
@@ -633,11 +633,11 @@ const Home = () => {
                   <img 
                     src={`${photo.imageUrl}`}
                     alt={photo.title}
-                    style={{ width: '100%', height: '250px', objectFit: 'cover' }}
+                    style={{ width: '100%', height: '140px', objectFit: 'cover' }}
                   />
-                  <div style={{ padding: '1rem', background: 'white' }}>
-                    <h3 style={{ margin: '0 0 0.5rem 0' }}>{photo.title}</h3>
-                    <p style={{ margin: 0, fontSize: '0.9rem', color: '#666' }}>{photo.description}</p>
+                  <div style={{ padding: '0.8rem', background: 'white' }}>
+                    <h3 style={{ margin: '0 0 0.3rem 0', fontSize: '0.95rem' }}>{photo.title}</h3>
+                    <p style={{ margin: 0, fontSize: '0.8rem', color: '#666' }}>{photo.description}</p>
                   </div>
                 </div>
               ))}
