@@ -50,40 +50,43 @@ router.post('/register', async (req, res) => {
 });
 
 // @route   POST /api/auth/login
-// @desc    Login user
+// @desc    Login user (HARDCODED for single admin)
 // @access  Public
 router.post('/login', async (req, res) => {
   try {
     const { email, password } = req.body;
 
-    // Check if user exists
-    const user = await User.findOne({ email });
-    if (!user) {
-      return res.status(400).json({ message: 'Invalid credentials' });
+    // HARDCODED CREDENTIALS - Only this email/password will work
+    const ADMIN_EMAIL = 'admin@school.com';
+    const ADMIN_PASSWORD = 'School@2024';
+
+    // Check hardcoded credentials
+    if (email === ADMIN_EMAIL && password === ADMIN_PASSWORD) {
+      // Create JWT token
+      const token = jwt.sign(
+        { 
+          id: 'hardcoded-admin',
+          email: ADMIN_EMAIL,
+          role: 'admin'
+        },
+        process.env.JWT_SECRET,
+        { expiresIn: '7d' }
+      );
+
+      return res.json({
+        token,
+        user: {
+          id: 'hardcoded-admin',
+          email: ADMIN_EMAIL,
+          name: 'School Admin',
+          role: 'admin'
+        }
+      });
     }
 
-    // Validate password
-    const isMatch = await user.comparePassword(password);
-    if (!isMatch) {
-      return res.status(400).json({ message: 'Invalid credentials' });
-    }
+    // If credentials don't match, return error
+    return res.status(400).json({ message: 'Invalid credentials' });
 
-    // Create JWT token
-    const token = jwt.sign(
-      { id: user._id },
-      process.env.JWT_SECRET,
-      { expiresIn: '7d' }
-    );
-
-    res.json({
-      token,
-      user: {
-        id: user._id,
-        email: user.email,
-        name: user.name,
-        role: user.role
-      }
-    });
   } catch (error) {
     console.error('Login error:', error);
     res.status(500).json({ message: 'Server error', error: error.message });
