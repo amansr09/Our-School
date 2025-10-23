@@ -79,9 +79,6 @@ const AdminLogin = () => {
             <button onClick={handleInitAdmin} className="btn btn-secondary btn-sm">
               Initialize Admin Account
             </button>
-            <p className="help-text">
-              Default credentials: admin@school.com / School@2024
-            </p>
           </div>
         </div>
       </div>
