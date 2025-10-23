@@ -110,7 +110,7 @@ router.get('/me', auth, async (req, res) => {
 });
 
 // @route   POST /api/auth/init
-// @desc    Initialize admin user from env variables
+// @desc    Initialize admin user with default credentials
 // @access  Public (one-time setup)
 router.post('/init', async (req, res) => {
   try {
@@ -120,10 +120,10 @@ router.post('/init', async (req, res) => {
       return res.status(400).json({ message: 'Admin already initialized' });
     }
 
-    // Create admin from env variables
+    // Create admin with default credentials
     const admin = new User({
-      email: process.env.ADMIN_EMAIL,
-      password: process.env.ADMIN_PASSWORD,
+      email: 'admin@school.com',
+      password: 'School@2024',
       name: 'School Admin',
       role: 'admin'
     });
