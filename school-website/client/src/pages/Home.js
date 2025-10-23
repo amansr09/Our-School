@@ -280,7 +280,7 @@ const Home = () => {
               }}>
                 <img 
                   key={heroContent?.images?.[0]?.url || 'hero-default'}
-                  src={heroContent?.images?.[0]?.url ? `http://localhost:5000${heroContent.images[0].url}` : "/images/illustration.webp"}
+                  src={heroContent?.images?.[0]?.url ? `${heroContent.images[0].url}` : "/images/illustration.webp"}
                   alt="Hero"
                   style={{
                     width: '450px',
@@ -376,7 +376,7 @@ const Home = () => {
               )}
               <img 
                 key={aboutContent[0]?.images?.[0]?.url || 'default'}
-                src={aboutContent[0]?.images?.[0]?.url ? `http://localhost:5000${aboutContent[0].images[0].url}` : "/images/illustration.webp"}
+                src={aboutContent[0]?.images?.[0]?.url ? `${aboutContent[0].images[0].url}` : "/images/illustration.webp"}
                 alt="About Our School" 
                 style={{ 
                   width: '100%', 
@@ -638,7 +638,7 @@ const Home = () => {
                     </button>
                   )}
                   <img 
-                    src={`http://localhost:5000${photo.imageUrl}`}
+                    src={`${photo.imageUrl}`}
                     alt={photo.title}
                     style={{ width: '100%', height: '250px', objectFit: 'cover' }}
                   />
@@ -727,7 +727,7 @@ const Home = () => {
                   )}
                   {video.thumbnailUrl ? (
                     <img 
-                      src={`http://localhost:5000${video.thumbnailUrl}`}
+                      src={`${video.thumbnailUrl}`}
                       alt={video.title}
                       style={{ width: '100%', height: '250px', objectFit: 'cover' }}
                     />
@@ -790,14 +790,14 @@ const Home = () => {
           
           {selectedMediaItem.mediaType === 'photo' ? (
             <img 
-              src={`http://localhost:5000${selectedMediaItem.imageUrl}`}
+              src={`${selectedMediaItem.imageUrl}`}
               alt={selectedMediaItem.title}
               style={{ maxWidth: '90%', maxHeight: '90%', borderRadius: '10px' }}
               onClick={(e) => e.stopPropagation()}
             />
           ) : (
             <video 
-              src={`http://localhost:5000${selectedMediaItem.videoUrl}`}
+              src={`${selectedMediaItem.videoUrl}`}
               controls
               autoPlay
               style={{ maxWidth: '90%', maxHeight: '90%', borderRadius: '10px' }}
@@ -830,7 +830,7 @@ const Home = () => {
                   )}
                   <div className="faculty-image-wrapper">
                     {member.imageUrl ? (
-                      <img src={`http://localhost:5000${member.imageUrl}`} alt={member.name} />
+                      <img src={`${member.imageUrl}`} alt={member.name} />
                     ) : (
                       <div className="faculty-default-icon">
                         <FaUser />
@@ -939,7 +939,7 @@ const Home = () => {
                     {editFormData.images?.[0]?.url && (
                       <div style={{marginTop: '1rem', textAlign: 'center'}}>
                         <img 
-                          src={`http://localhost:5000${editFormData.images[0].url}`} 
+                          src={`${editFormData.images[0].url}`} 
                           alt="Current" 
                           style={{width: '150px', height: '150px', borderRadius: '50%', objectFit: 'cover'}}
                         />
@@ -985,7 +985,7 @@ const Home = () => {
                     {editFormData.images?.[0]?.url && (
                       <div style={{marginTop: '1rem', textAlign: 'center'}}>
                         <img 
-                          src={`http://localhost:5000${editFormData.images[0].url}`} 
+                          src={`${editFormData.images[0].url}`} 
                           alt="Current" 
                           style={{width: '200px', height: 'auto', borderRadius: '10px'}}
                         />
@@ -1107,7 +1107,7 @@ const Home = () => {
                     {editFormData.imageUrl && (
                       <div style={{marginTop: '1rem', textAlign: 'center'}}>
                         <img 
-                          src={`http://localhost:5000${editFormData.imageUrl}`} 
+                          src={`${editFormData.imageUrl}`} 
                           alt="Current" 
                           style={{width: '100px', height: '100px', borderRadius: '50%', objectFit: 'cover'}}
                         />
