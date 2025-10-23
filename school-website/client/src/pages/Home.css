@@ -857,40 +857,183 @@ html {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  /* Hero Section - Smaller */
+  .hero {
+    min-height: auto;
+    padding: 3rem 0;
+  }
+
+  .hero-overlay {
+    padding: 2rem 0;
+  }
+
   .hero-content h1 {
-    font-size: 2.5rem;
+    font-size: 1.8rem;
   }
 
   .hero-content p {
-    font-size: 1.3rem;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
   }
 
   .hero-buttons {
     flex-direction: column;
     align-items: stretch;
+    gap: 0.8rem;
   }
 
+  .hero-buttons .btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  /* Sections - Smaller Padding */
   .section {
-    padding: 60px 0;
+    padding: 40px 0;
   }
 
   .section-title {
-    font-size: 2rem;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
   }
 
-  .announcements-grid,
-  .events-grid,
-  .gallery-grid,
+  .section-subtitle {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  /* Announcements - Smaller */
+  .announcements-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .announcement-card {
+    padding: 1.5rem;
+  }
+
+  .announcement-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .announcement-type {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.8rem;
+  }
+
+  /* About Section - Smaller */
+  .about-content {
+    padding: 2rem 1.5rem;
+  }
+
+  .about-content h3 {
+    font-size: 1.5rem;
+  }
+
+  .about-content h4 {
+    font-size: 1.1rem;
+  }
+
+  .about-content p {
+    font-size: 0.95rem;
+  }
+
+  /* Programs - Smaller */
+  .programs-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .program-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .program-icon {
+    width: 70px;
+    height: 70px;
+  }
+
+  .program-icon svg {
+    width: 35px;
+    height: 35px;
+  }
+
+  .program-card h3 {
+    font-size: 1.4rem;
+  }
+
+  .program-description {
+    font-size: 0.95rem;
+  }
+
+  /* Gallery - Smaller Boxes */
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  /* Faculty - Smaller */
   .faculty-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
   }
 
+  .faculty-card {
+    padding: 1.2rem;
+  }
+
+  .faculty-image-wrapper {
+    width: 90px;
+    height: 90px;
+  }
+
+  .faculty-card h3 {
+    font-size: 1rem;
+  }
+
+  .faculty-designation {
+    font-size: 0.85rem;
+  }
+
+  .faculty-department {
+    font-size: 0.8rem;
+  }
+
+  /* Contact - Smaller */
   .contact-content {
     grid-template-columns: 1fr;
     gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .contact-info {
+    padding: 2rem 1.5rem;
+  }
+
+  .contact-info h3 {
+    font-size: 1.4rem;
+  }
+
+  .contact-info p {
+    font-size: 0.95rem;
   }
 
   .contact-form-wrapper {
-    padding: 2rem;
+    padding: 1.5rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    padding: 0.8rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  .contact-form .btn {
+    padding: 1rem;
+    font-size: 1rem;
   }
 }

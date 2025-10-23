@@ -270,21 +270,37 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .gallery-page {
+    padding: 2rem 0;
+  }
+
   .gallery-boxes {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1.5rem;
+    margin: 2rem auto;
+    padding: 0 1rem;
   }
 
   .gallery-box {
     padding: 2rem 1.5rem;
   }
 
+  .gallery-box-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
   .gallery-box h2 {
     font-size: 1.5rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .gallery-box p {
+    font-size: 1rem;
   }
 
   .gallery-grid {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
     gap: 1rem;
     padding: 1rem;
   }
@@ -294,7 +310,21 @@
   }
 
   .gallery-modal-header h2 {
+    font-size: 1.2rem;
+  }
+
+  .close-btn {
+    width: 35px;
+    height: 35px;
     font-size: 1.3rem;
+  }
+
+  .gallery-item-overlay h3 {
+    font-size: 0.95rem;
+  }
+
+  .gallery-item-overlay p {
+    font-size: 0.8rem;
   }
 
   .media-viewer-overlay {
@@ -311,7 +341,11 @@
   }
 
   .media-info h3 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+  }
+
+  .media-info p {
+    font-size: 0.9rem;
   }
 }
 
