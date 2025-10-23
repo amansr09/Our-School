@@ -992,6 +992,33 @@ html {
     margin-top: 2rem;
   }
 
+  /* Gallery Section Boxes - Smaller and Horizontal on Mobile */
+  .gallery-section .container > div:last-of-type {
+    gap: 1rem !important;
+    margin: 1.5rem auto !important;
+    padding: 0 1rem !important;
+  }
+
+  .gallery-section .container > div:last-of-type > div {
+    width: 160px !important;
+    height: 160px !important;
+    padding: 1rem !important;
+  }
+
+  .gallery-section .container > div:last-of-type > div > div:first-child {
+    font-size: 2.5rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .gallery-section .container > div:last-of-type > div h2 {
+    font-size: 1rem !important;
+    margin: 0.3rem 0 !important;
+  }
+
+  .gallery-section .container > div:last-of-type > div p {
+    font-size: 0.85rem !important;
+  }
+
   /* Faculty - Smaller */
   .faculty-grid {
     grid-template-columns: 1fr;
