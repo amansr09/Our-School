@@ -60,12 +60,12 @@ router.post('/', auth, upload.fields([{ name: 'media', maxCount: 1 }, { name: 't
     });
 
     if (mediaType === 'video') {
-      newMedia.videoUrl = `/uploads/${req.files.media[0].filename}`;
+      newMedia.videoUrl = req.files.media[0].path;
       if (req.files.thumbnail) {
-        newMedia.thumbnailUrl = `/uploads/${req.files.thumbnail[0].filename}`;
+        newMedia.thumbnailUrl = req.files.thumbnail[0].path;
       }
     } else {
-      newMedia.imageUrl = `/uploads/${req.files.media[0].filename}`;
+      newMedia.imageUrl = req.files.media[0].path;
     }
 
     await newMedia.save();
@@ -95,13 +95,13 @@ router.put('/:id', auth, upload.fields([{ name: 'media', maxCount: 1 }, { name: 
     if (req.files) {
       if (req.files.media) {
         if (mediaType === 'video') {
-          updateData.videoUrl = `/uploads/${req.files.media[0].filename}`;
+          updateData.videoUrl = req.files.media[0].path;
         } else {
-          updateData.imageUrl = `/uploads/${req.files.media[0].filename}`;
+          updateData.imageUrl = req.files.media[0].path;
         }
       }
       if (req.files.thumbnail && mediaType === 'video') {
-        updateData.thumbnailUrl = `/uploads/${req.files.thumbnail[0].filename}`;
+        updateData.thumbnailUrl = req.files.thumbnail[0].path;
       }
     }
 

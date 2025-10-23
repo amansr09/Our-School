@@ -43,7 +43,7 @@ router.post('/', auth, upload.array('images', 5), async (req, res) => {
     const { section, title, subtitle, description, content, order, isActive } = req.body;
 
     const images = req.files ? req.files.map((file, index) => ({
-      url: `/uploads/${file.filename}`,
+      url: file.path,
       caption: req.body[`caption_${index}`] || '',
       order: index
     })) : [];
@@ -78,7 +78,7 @@ router.put('/:id', auth, upload.array('images', 5), async (req, res) => {
 
     if (req.files && req.files.length > 0) {
       const newImages = req.files.map((file, index) => ({
-        url: `/uploads/${file.filename}`,
+        url: file.path,
         caption: req.body[`caption_${index}`] || '',
         order: images.length + index
       }));

@@ -58,7 +58,7 @@ router.post('/', auth, upload.single('image'), async (req, res) => {
       time,
       location,
       category: category || 'other',
-      imageUrl: req.file ? `/uploads/${req.file.filename}` : null,
+      imageUrl: req.file ? req.file.path : null,
       isActive: isActive !== undefined ? isActive : true
     });
 
@@ -88,7 +88,7 @@ router.put('/:id', auth, upload.single('image'), async (req, res) => {
     };
 
     if (req.file) {
-      updateData.imageUrl = `/uploads/${req.file.filename}`;
+      updateData.imageUrl = req.file.path;
     }
 
     const updatedEvent = await Event.findByIdAndUpdate(
